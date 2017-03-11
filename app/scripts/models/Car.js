@@ -2,11 +2,16 @@ import Vehicle from './Vehicle';
 
 export default class Car extends Vehicle {
 
-  constructor(id, licenseNumber, make, model) {
-    super(id, licenseNumber, make, model);
+  constructor(id, licenseNumber, make, model, position, kilometers) {
+    super(id, licenseNumber, make, model, position);
+    this._kilometers = kilometers;
   }
 
-  start() {
-    console.log('Starting Car');
+  get kilometers() {
+    return this._kilometers;
+  }
+
+  set kilometers(value) {
+    this._kilometers = value;
   }
 }
