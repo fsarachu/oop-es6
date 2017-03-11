@@ -12,6 +12,7 @@ export default class FleetDataService {
   constructor() {
     this._cars = [];
     this._drones = [];
+    this._errors = [];
   }
 
   get cars() {
@@ -20,6 +21,10 @@ export default class FleetDataService {
 
   get drones() {
     return this._drones;
+  }
+
+  get errors() {
+    return this._errors;
   }
 
   loadData(fleet) {
