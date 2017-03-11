@@ -26,30 +26,38 @@ export default class FleetDataService {
     for (let vehicle of fleet) {
       switch (vehicle.type) {
         case 'car':
-          this.cars.push(
-            new Car(
-              nextId(),
-              vehicle.license,
-              vehicle.make,
-              vehicle.model,
-              vehicle.position,
-              vehicle.kilometers
-            )
-          );
+          this.loadCar(vehicle);
           break;
         case 'drone':
-          this.drones.push(
-            new Drone(
-              nextId(),
-              vehicle.license,
-              vehicle.make,
-              vehicle.model,
-              vehicle.position,
-              vehicle.airHours
-            )
-          );
+          this.loadDrone(vehicle);
           break;
       }
     }
+  }
+
+  loadCar(car) {
+    this.cars.push(
+      new Car(
+        nextId(),
+        car.license,
+        car.make,
+        car.model,
+        car.position,
+        car.kilometers
+      )
+    );
+  }
+
+  loadDrone(drone) {
+    this.drones.push(
+      new Drone(
+        nextId(),
+        drone.license,
+        drone.make,
+        drone.model,
+        drone.position,
+        drone.airHours
+      )
+    );
   }
 }
