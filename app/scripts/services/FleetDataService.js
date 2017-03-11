@@ -145,4 +145,16 @@ export default class FleetDataService {
       return drone.license === license;
     });
   }
+
+  getCarsSortedByLicense() {
+    return this.cars.sort((car1, car2) => {
+      if (car1.license < car2.license) {
+        return -1;
+      }
+      if (car1.license > car2.license) {
+        return 1;
+      }
+      return 0;
+    });
+  }
 }
