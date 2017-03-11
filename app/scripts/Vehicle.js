@@ -10,4 +10,8 @@ export default class Vehicle {
   set licenseNumber(value) {
     this._licenseNumber = value;
   }
+
+  start() {
+    console.log('Starting Vehicle');
+  }
 }
