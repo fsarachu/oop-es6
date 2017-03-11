@@ -57,6 +57,8 @@ export default class FleetDataService {
     } catch (e) {
       this.errors.push(new DataError(`Error loading car: ${e.message}`, car));
     }
+
+    return null;
   }
 
   loadDrone(drone) {
@@ -72,5 +74,7 @@ export default class FleetDataService {
     } catch (e) {
       this.errors.push(new DataError(`Error loading drone; ${e.message}`, drone));
     }
+
+    return null;
   }
 }
