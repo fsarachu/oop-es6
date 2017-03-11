@@ -2,8 +2,8 @@ import Vehicle from './Vehicle';
 
 export default class Drone extends Vehicle {
 
-  constructor(id, license, make, model, position, airHours) {
-    super(id, license, make, model, position);
+  constructor(license, make, model, position, airHours) {
+    super(license, make, model, position);
     this._airHours = airHours;
   }
 

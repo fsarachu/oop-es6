@@ -2,8 +2,8 @@ import Vehicle from './Vehicle';
 
 export default class Car extends Vehicle {
 
-  constructor(id, license, make, model, position, kilometers) {
-    super(id, license, make, model, position);
+  constructor(license, make, model, position, kilometers) {
+    super(license, make, model, position);
     this._kilometers = kilometers;
   }
 

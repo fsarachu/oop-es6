@@ -2,12 +2,6 @@ import Car from '../models/Car';
 import Drone from '../models/Drone';
 import DataError from "./DataError";
 
-let id = 1;
-
-function nextId() {
-  return id++;
-}
-
 export default class FleetDataService {
 
   constructor() {
@@ -61,7 +55,6 @@ export default class FleetDataService {
   loadCar(car) {
     try {
       return new Car(
-        nextId(),
         car.license,
         car.make,
         car.model,
@@ -78,7 +71,6 @@ export default class FleetDataService {
   loadDrone(drone) {
     try {
       return new Drone(
-        nextId(),
         drone.license,
         drone.make,
         drone.model,
