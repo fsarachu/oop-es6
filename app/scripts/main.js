@@ -4,8 +4,7 @@ import FleetDataService from './services/FleetDataService';
 let dataService = new FleetDataService();
 dataService.loadData(fleet);
 
-console.dir(dataService.cars);
-console.dir(dataService.drones);
+console.dir(dataService.getCarByLicense('C1030'));
 
 for (let e of dataService.errors) {
   console.error(e.message);
