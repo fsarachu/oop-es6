@@ -10,3 +10,8 @@ drone2.fly();
 
 console.log('Drone.theFastestOf(drone1, drone2):');
 console.dir(Drone.theFastestOf(drone1, drone2));
+
+console.log(`drone1.id: ${drone1.id}`);
+drone1.id = 'PA100';
+console.log(`drone1.id: ${drone1.id}`);
+
