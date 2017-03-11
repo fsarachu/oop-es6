@@ -1,4 +1,21 @@
 {
+  "name": "oop-es6",
+  "version": "1.0.0",
+  "description": "Object Oriented Programming with ES6",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fsarachu/oop-es6.git"
+  },
+  "author": "Franco Sarachu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fsarachu/oop-es6/issues"
+  },
+  "homepage": "https://github.com/fsarachu/oop-es6#readme",
   "private": true,
   "engines": {
     "node": ">=4"
