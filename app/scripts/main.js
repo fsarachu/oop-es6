@@ -1,16 +1,8 @@
-import Vehicle from './models/Vehicle';
-import Drone from './models/Drone';
-import Car from './models/Car';
+import fleet from './data/fleetData';
+import FleetDataService from './services/FleetDataService';
 
-let drone = new Drone('DR-PA154');
-let car = new Car('CA-BM078');
+let dataService = new FleetDataService();
+dataService.loadData(fleet);
 
-console.log(`drone.licenseNumber: ${drone.licenseNumber}`);
-console.log(`car.licenseNumber: ${car.licenseNumber}`);
-
-console.log('------------------');
-
-console.log(`drone.start():`);
-drone.start();
-console.log(`car.start():`);
-car.start();
+console.dir(dataService.cars);
+console.dir(dataService.drones);
