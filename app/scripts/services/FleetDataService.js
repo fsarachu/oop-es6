@@ -32,10 +32,18 @@ export default class FleetDataService {
     for (let vehicle of fleet) {
       switch (vehicle.type) {
         case 'car':
-          this.cars.push(this.loadCar(vehicle));
+          if (this.validateCarData(vehicle)) {
+            this.cars.push(this.loadCar(vehicle));
+          } else {
+            this.errors.push(new DataError('Invalid car data', vehicle));
+          }
           break;
         case 'drone':
-          this.drones.push(this.loadDrone(vehicle));
+          if (this.validateDroneData(vehicle)) {
+            this.drones.push(this.loadDrone(vehicle));
+          } else {
+            this.errors.push(new DataError('Invalid drone data', vehicle));
+          }
           break;
         default:
           this.errors.push(new DataError('Unkown vehicle type', vehicle));
@@ -76,5 +84,47 @@ export default class FleetDataService {
     }
 
     return null;
+  }
+
+  validateCarData(carData) {
+    let hasErrors = false;
+
+    let requiredProperties = [
+      "license",
+      "make",
+      "model",
+      "kilometers",
+      "position"
+    ];
+
+    for (let property of requiredProperties) {
+      if (!carData[property]) {
+        this.errors.push(new DataError(`Missing required property: "${property}"`, carData));
+        hasErrors = true;
+      }
+    }
+
+    return !hasErrors;
+  }
+
+  validateDroneData(droneData) {
+    let hasErrors = false;
+
+    let requiredProperties = [
+      "license",
+      "make",
+      "model",
+      "airHours",
+      "position"
+    ];
+
+    for (let property of requiredProperties) {
+      if (!droneData[property]) {
+        this.errors.push(new DataError(`Missing required property: "${property}"`, droneData));
+        hasErrors = true;
+      }
+    }
+
+    return !hasErrors;
   }
 }
