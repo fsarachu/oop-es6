@@ -1,6 +1,6 @@
-import Vehicle from './Vehicle';
-import Drone from './Drone';
-import Car from './Car';
+import Vehicle from './models/Vehicle';
+import Drone from './models/Drone';
+import Car from './models/Car';
 
 let drone = new Drone('DR-PA154');
 let car = new Car('CA-BM078');

@@ -1,12 +1,11 @@
 import Vehicle from './Vehicle';
 
-export default class Car extends Vehicle {
+export default class Drone extends Vehicle {
   constructor(licenseNumber) {
     super(licenseNumber);
   }
 
-
   start() {
-    console.log('Starting Car');
+    console.log('Starting Drone');
   }
 }
