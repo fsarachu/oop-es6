@@ -1,8 +1,8 @@
 export default class Vehicle {
 
-  constructor(id, licenseNumber, make, model, position) {
+  constructor(id, license, make, model, position) {
     this._id = id;
-    this._licenseNumber = licenseNumber;
+    this._license = license;
     this._make = make;
     this._model = model;
     this._position = position;
@@ -16,12 +16,12 @@ export default class Vehicle {
     this._id = value;
   }
 
-  get licenseNumber() {
-    return this._licenseNumber;
+  get license() {
+    return this._license;
   }
 
-  set licenseNumber(value) {
-    this._licenseNumber = value;
+  set license(value) {
+    this._license = value;
   }
 
   get make() {
