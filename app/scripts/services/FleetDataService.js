@@ -157,4 +157,16 @@ export default class FleetDataService {
       return 0;
     });
   }
+
+  getDronesSortedByLicense() {
+    return this.drones.sort((drone1, drone2) => {
+      if (drone1.license < drone2.license) {
+        return -1;
+      }
+      if (drone1.license > drone2.license) {
+        return 1;
+      }
+      return 0;
+    });
+  }
 }
