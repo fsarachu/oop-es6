@@ -139,4 +139,10 @@ export default class FleetDataService {
       return car.license === license;
     });
   }
+
+  getDroneByLicense(license) {
+    return this.drones.find(drone => {
+      return drone.license === license;
+    });
+  }
 }
