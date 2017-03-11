@@ -157,4 +157,9 @@ export default class FleetDataService {
       return 0;
     });
   }
+
+
+  filterCarsByMake(s) {
+    return this.cars.filter(car => car.make.toLowerCase().indexOf(s.toLowerCase()) != -1);
+  }
 }
