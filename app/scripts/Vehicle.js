@@ -1,5 +1,13 @@
 export default class Vehicle {
-  constructor() {
-    console.log('Constructing Vehicle');
+  constructor(licenseNumber) {
+    this._licenseNumber = licenseNumber;
+  }
+
+  get licenseNumber() {
+    return this._licenseNumber;
+  }
+
+  set licenseNumber(value) {
+    this._licenseNumber = value;
   }
 }
