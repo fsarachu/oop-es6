@@ -4,3 +4,5 @@ export default class Drone {
     this.name = name;
   }
 }
+
+Drone.vehicleType = 'Rotorcraft';
