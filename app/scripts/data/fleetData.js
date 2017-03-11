@@ -1,4 +1,4 @@
-export default fleet = [
+export default [
   {
     type: 'car',
     license: 'C4928',
