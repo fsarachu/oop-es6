@@ -6,3 +6,7 @@ dataService.loadData(fleet);
 
 console.dir(dataService.cars);
 console.dir(dataService.drones);
+
+for (let e of dataService.errors) {
+  console.error(e.message);
+}
