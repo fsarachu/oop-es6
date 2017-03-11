@@ -44,7 +44,7 @@ export default class FleetDataService {
     }
   }
 
-  static loadCar(car) {
+  loadCar(car) {
     return new Car(
       nextId(),
       car.license,
@@ -55,7 +55,7 @@ export default class FleetDataService {
     );
   }
 
-  static loadDrone(drone) {
+  loadDrone(drone) {
     return new Drone(
       nextId(),
       drone.license,
