@@ -1,13 +1,12 @@
 import Drone from './Drone';
 
-let drone = new Drone('P154', 'Parrot AR');
+let drone1 = new Drone('PA154', 'Parrot AR', 50);
+let drone2 = new Drone('PH412', 'Phantom DJI', 32);
 
-console.log(`drone: ${drone}`);
-console.log(`typeof Drone: ${typeof Drone}`);
-console.log(`typeof drone: ${typeof drone}`);
-console.log(`drone instanceof Drone: ${drone instanceof Drone}`);
-console.log(`drone instanceof Object: ${drone instanceof Object}`);
-console.log(`drone.constructor.name: ${drone.constructor.name}`);
-console.log(`Drone.vehicleType: ${Drone.vehicleType}`);
+console.log('drone1.fly()');
+drone1.fly();
+console.log('drone2.fly()');
+drone2.fly();
 
-drone.fly();
+console.log('Drone.theFastestOf(drone1, drone2):');
+console.dir(Drone.theFastestOf(drone1, drone2));
