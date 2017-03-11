@@ -33,14 +33,20 @@ export default class FleetDataService {
       switch (vehicle.type) {
         case 'car':
           if (this.validateCarData(vehicle)) {
-            this.cars.push(this.loadCar(vehicle));
+            let car = this.loadCar(vehicle);
+            if (car) {
+              this.cars.push(car);
+            }
           } else {
             this.errors.push(new DataError('Invalid car data', vehicle));
           }
           break;
         case 'drone':
           if (this.validateDroneData(vehicle)) {
-            this.drones.push(this.loadDrone(vehicle));
+            let drone = this.loadDrone(vehicle);
+            if (drone) {
+              this.drones.push(drone);
+            }
           } else {
             this.errors.push(new DataError('Invalid drone data', vehicle));
           }
