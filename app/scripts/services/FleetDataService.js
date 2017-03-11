@@ -45,24 +45,32 @@ export default class FleetDataService {
   }
 
   loadCar(car) {
-    return new Car(
-      nextId(),
-      car.license,
-      car.make,
-      car.model,
-      car.position,
-      car.kilometers
-    );
+    try {
+      return new Car(
+        nextId(),
+        car.license,
+        car.make,
+        car.model,
+        car.position,
+        car.kilometers
+      );
+    } catch (e) {
+      this.errors.push(new DataError(`Error loading car: ${e.message}`, car));
+    }
   }
 
   loadDrone(drone) {
-    return new Drone(
-      nextId(),
-      drone.license,
-      drone.make,
-      drone.model,
-      drone.position,
-      drone.airHours
-    );
+    try {
+      return new Drone(
+        nextId(),
+        drone.license,
+        drone.make,
+        drone.model,
+        drone.position,
+        drone.airHours
+      );
+    } catch (e) {
+      this.errors.push(new DataError(`Error loading drone; ${e.message}`, drone));
+    }
   }
 }
