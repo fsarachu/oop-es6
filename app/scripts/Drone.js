@@ -34,11 +34,11 @@ export default class Drone {
   static theFastestOf(drone1, drone2) {
     let fastest = null;
 
-    if (drone1._maxSpeed > drone2._maxSpeed) {
+    if (drone1.maxSpeed > drone2.maxSpeed) {
       fastest = drone1;
     }
 
-    if (drone1._maxSpeed < drone2._maxSpeed) {
+    if (drone1.maxSpeed < drone2.maxSpeed) {
       fastest = drone2;
     }
 
@@ -46,7 +46,7 @@ export default class Drone {
   }
 
   fly() {
-    console.log(`Drone ${this._id} is flying.`);
+    console.log(`Drone ${this.id} is flying.`);
   }
 }
 
