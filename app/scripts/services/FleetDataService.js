@@ -127,15 +127,11 @@ export default class FleetDataService {
   }
 
   getCarByLicense(license) {
-    return this.cars.find(car => {
-      return car.license === license;
-    });
+    return this.cars.find(car => car.license === license);
   }
 
   getDroneByLicense(license) {
-    return this.drones.find(drone => {
-      return drone.license === license;
-    });
+    return this.drones.find(drone => drone.license === license);
   }
 
   getCarsSortedByLicense() {
