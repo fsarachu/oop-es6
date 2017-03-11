@@ -1,10 +1,11 @@
 export default class Vehicle {
 
-  constructor(id, licenseNumber, make, model) {
+  constructor(id, licenseNumber, make, model, position) {
     this._id = id;
     this._licenseNumber = licenseNumber;
     this._make = make;
     this._model = model;
+    this._position = position;
   }
 
   get id() {
@@ -39,7 +40,11 @@ export default class Vehicle {
     this._model = value;
   }
 
-  start() {
-    console.log('Starting Vehicle');
+  get position() {
+    return this._position;
+  }
+
+  set position(value) {
+    this._position = value;
   }
 }
