@@ -3,6 +3,10 @@ export default class Drone {
     this.id = id;
     this.name = name;
   }
+
+  fly() {
+    console.log(`Drone ${this.id} is flying.`);
+  }
 }
 
 Drone.vehicleType = 'Rotorcraft';

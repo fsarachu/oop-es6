@@ -8,4 +8,6 @@ console.log(`typeof drone: ${typeof drone}`);
 console.log(`drone instanceof Drone: ${drone instanceof Drone}`);
 console.log(`drone instanceof Object: ${drone instanceof Object}`);
 console.log(`drone.constructor.name: ${drone.constructor.name}`);
-console.log(Drone.vehicleType);
+console.log(`Drone.vehicleType: ${Drone.vehicleType}`);
+
+drone.fly();
