@@ -1,5 +1,6 @@
 import Car from '../models/Car';
 import Drone from '../models/Drone';
+import DataError from "./DataError";
 
 let id = 1;
 
@@ -35,6 +36,9 @@ export default class FleetDataService {
           break;
         case 'drone':
           this.drones.push(FleetDataService.loadDrone(vehicle));
+          break;
+        default:
+          this.errors.push(new DataError('Unkown vehicle type', vehicle));
           break;
       }
     }
