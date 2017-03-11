@@ -32,10 +32,10 @@ export default class FleetDataService {
     for (let vehicle of fleet) {
       switch (vehicle.type) {
         case 'car':
-          this.cars.push(FleetDataService.loadCar(vehicle));
+          this.cars.push(this.loadCar(vehicle));
           break;
         case 'drone':
-          this.drones.push(FleetDataService.loadDrone(vehicle));
+          this.drones.push(this.loadDrone(vehicle));
           break;
         default:
           this.errors.push(new DataError('Unkown vehicle type', vehicle));
