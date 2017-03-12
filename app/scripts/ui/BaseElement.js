@@ -1,3 +1,5 @@
+import 'material-design-lite';
+
 export default class BaseElement {
 
   constructor() {
@@ -26,5 +28,10 @@ export default class BaseElement {
     }
 
     $element.append(this.element);
+    this.enableJs();
+  }
+
+  enableJs() {
+    componentHandler.upgradeElement(this.element[0]);
   }
 }
