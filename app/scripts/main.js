@@ -19,7 +19,7 @@ let titleBar = new TitleBar('Some Title');
 titleBar.addLink('Home', '#0', 'home');
 titleBar.addLink('Cars', '#0', 'directions_car');
 titleBar.addLink('Drones', '#0', 'toys');
-titleBar.addLink('Map', '#0', 'track_changes');
+titleBar.addLink('Map', '#0', 'map');
 titleBar.prependToElement($body);
 
 let $pageContent = $('.page-content');
