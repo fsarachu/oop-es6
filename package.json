@@ -66,5 +66,8 @@
     "parserOptions": {
       "sourceType": "module"
     }
+  },
+  "dependencies": {
+    "material-design-lite": "^1.3.0"
   }
 }
