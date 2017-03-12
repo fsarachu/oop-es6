@@ -88,11 +88,11 @@ export default class FleetDataService {
     let hasErrors = false;
 
     let requiredProperties = [
-      "license",
-      "make",
-      "model",
-      "kilometers",
-      "position"
+      'license',
+      'make',
+      'model',
+      'kilometers',
+      'position'
     ];
 
     for (let property of requiredProperties) {
@@ -109,11 +109,11 @@ export default class FleetDataService {
     let hasErrors = false;
 
     let requiredProperties = [
-      "license",
-      "make",
-      "model",
-      "airHours",
-      "position"
+      'license',
+      'make',
+      'model',
+      'airHours',
+      'position'
     ];
 
     for (let property of requiredProperties) {
