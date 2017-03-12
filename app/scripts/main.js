@@ -4,6 +4,7 @@ import Button from './ui/Button';
 import Image from './ui/Image';
 import TitleBar from './ui/TitleBar';
 import DataTable from './ui/DataTable';
+import DataTableHeader from "./ui/DataTableHeader";
 
 let dataService = new FleetDataService();
 dataService.loadData(fleet);
@@ -26,27 +27,10 @@ titleBar.prependToElement($body);
 let $pageContent = $('.page-content');
 
 let headers = [
-  {
-    text: 'License',
-    propertyName: 'license',
-    isNumeric: false
-  },
-  {
-    text: 'Make',
-    propertyName: 'make',
-    isNumeric: false
-  },
-  {
-    text: 'Model',
-    propertyName: 'model',
-    isNumeric: false
-  },
-  {
-    text: 'Kilometers',
-    propertyName: 'kilometers',
-    isNumeric: true,
-    suffix: 'Km'
-  },
+  new DataTableHeader('License', 'license', false, null),
+  new DataTableHeader('Make', 'make', false, null),
+  new DataTableHeader('Model', 'model', false, null),
+  new DataTableHeader('Kilometers', 'kilometers', true, 'Km')
 ];
 let dataTable = new DataTable(headers, dataService.cars);
 
