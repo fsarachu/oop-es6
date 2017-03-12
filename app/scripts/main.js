@@ -1,5 +1,6 @@
 import fleet from './data/fleetData';
 import FleetDataService from './services/FleetDataService';
+import Button from "./ui/Button";
 
 let dataService = new FleetDataService();
 dataService.loadData(fleet);
@@ -10,4 +11,5 @@ for (let e of dataService.errors) {
   console.error(e.message);
 }
 
-$('#replace-me').text('From main.js');
+let button = new Button('Click Me!');
+button.appendToElement($('body'));
