@@ -31,6 +31,15 @@ export default class BaseElement {
     this.enableJs();
   }
 
+  prependToElement($element) {
+    if (!this.element) {
+      this.createElement();
+    }
+
+    $element.prepend(this.element);
+    this.enableJs();
+  }
+
   enableJs() {
     componentHandler.upgradeElement(this.element[0]);
   }
