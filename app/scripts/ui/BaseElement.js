@@ -1,7 +1,7 @@
 export default class BaseElement {
 
   constructor() {
-    this._element = $(this.getElementString());
+    this._element = null;
   }
 
   get element() {
@@ -16,7 +16,15 @@ export default class BaseElement {
     throw 'You must override getElementString() in BaseElement';
   }
 
+  createElement() {
+    return $(this.getElementString());
+  }
+
   appendToElement($element) {
+    if (!this.element) {
+      this.createElement();
+    }
+
     $element.append(this.element);
   }
 }
