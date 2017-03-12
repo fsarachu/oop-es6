@@ -2,6 +2,7 @@ import fleet from './data/fleetData';
 import FleetDataService from './services/FleetDataService';
 import Button from "./ui/Button";
 import Image from "./ui/Image";
+import TitleBar from "./ui/TitleBar";
 
 let dataService = new FleetDataService();
 dataService.loadData(fleet);
@@ -14,8 +15,13 @@ for (let e of dataService.errors) {
 
 let $body = $('body');
 
-let button = new Button('Click Me!');
-button.appendToElement($body);
+let titleBar = new TitleBar('Some Title');
+titleBar.prependToElement($body);
+
+let $pageContent = $('.page-content');
 
 let image = new Image('images/drone.jpg');
-image.appendToElement($body);
+image.appendToElement($pageContent);
+
+let button = new Button('Click Me!');
+button.appendToElement($pageContent);
