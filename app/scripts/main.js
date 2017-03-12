@@ -1,8 +1,8 @@
 import fleet from './data/fleetData';
 import FleetDataService from './services/FleetDataService';
-import Button from "./ui/Button";
-import Image from "./ui/Image";
-import TitleBar from "./ui/TitleBar";
+import Button from './ui/Button';
+import Image from './ui/Image';
+import TitleBar from './ui/TitleBar';
 
 let dataService = new FleetDataService();
 dataService.loadData(fleet);
