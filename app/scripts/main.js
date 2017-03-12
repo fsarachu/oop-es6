@@ -3,6 +3,7 @@ import FleetDataService from './services/FleetDataService';
 import Button from './ui/Button';
 import Image from './ui/Image';
 import TitleBar from './ui/TitleBar';
+import DataTable from './ui/DataTable';
 
 let dataService = new FleetDataService();
 dataService.loadData(fleet);
@@ -24,8 +25,29 @@ titleBar.prependToElement($body);
 
 let $pageContent = $('.page-content');
 
-let image = new Image('images/drone.jpg');
-image.appendToElement($pageContent);
+let headers = [
+  {
+    text: 'License',
+    propertyName: 'license',
+    isNumeric: false
+  },
+  {
+    text: 'Make',
+    propertyName: 'make',
+    isNumeric: false
+  },
+  {
+    text: 'Model',
+    propertyName: 'model',
+    isNumeric: false
+  },
+  {
+    text: 'Kilometers',
+    propertyName: 'kilometers',
+    isNumeric: true,
+    suffix: 'Km'
+  },
+];
+let dataTable = new DataTable(headers, dataService.cars);
 
-let button = new Button('Click Me!');
-button.appendToElement($pageContent);
+dataTable.appendToElement($pageContent);
