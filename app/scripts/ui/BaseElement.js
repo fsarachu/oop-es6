@@ -17,7 +17,7 @@ export default class BaseElement {
   }
 
   createElement() {
-    return $(this.getElementString());
+    this.element = $(this.getElementString());
   }
 
   appendToElement($element) {
