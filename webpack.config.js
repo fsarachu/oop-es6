@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 
 module.exports = {
   entry: './app/scripts/main.js',
@@ -13,5 +14,16 @@ module.exports = {
         loader: 'babel-loader'
       }
     ]
-  }
+  },
+  resolve: {
+    alias: {
+      jquery: path.resolve(__dirname, 'node_modules/jquery/src/jquery.js')
+    }
+  },
+  plugins: [
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery'
+    })
+  ]
 };

@@ -9,3 +9,5 @@ console.dir(dataService.filterCarsByMake('m'));
 for (let e of dataService.errors) {
   console.error(e.message);
 }
+
+$('#replace-me').text('From main.js');
