@@ -9,12 +9,6 @@ import DataTableHeader from "./ui/DataTableHeader";
 let dataService = new FleetDataService();
 dataService.loadData(fleet);
 
-console.dir(dataService.filterCarsByMake('m'));
-
-for (let e of dataService.errors) {
-  console.error(e.message);
-}
-
 let $body = $('body');
 
 let titleBar = new TitleBar('Some Title');
@@ -32,6 +26,11 @@ let headers = [
   new DataTableHeader('Model', 'model', false, null),
   new DataTableHeader('Kilometers', 'kilometers', true, 'Km')
 ];
-let dataTable = new DataTable(headers, dataService.cars);
+
+let dataTable = new DataTable(headers, dataService.getCarsSortedByLicense());
 
 dataTable.appendToElement($pageContent);
+
+for (let e of dataService.errors) {
+  console.error(e.message);
+}
