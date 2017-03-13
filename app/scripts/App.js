@@ -17,6 +17,7 @@ export default class App extends AppBase {
 
     this.render($('body'));
   }
+
   get dataService() {
     return this._dataService;
   }
