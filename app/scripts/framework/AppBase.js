@@ -41,7 +41,7 @@ export default class AppBase {
   }
 
   render($parentElement) {
-    this.titleBar.appendToElement($parentElement);
+    this.titleBar.prependToElement($parentElement);
   }
 
   addRoute(title, url, pageObject, defaultRoute = false, icon = null) {
