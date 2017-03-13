@@ -21,4 +21,8 @@ export default class AppBase {
   set titleBar(value) {
     this._titleBar = value;
   }
+
+  render($parentElement) {
+    this.titleBar.appendToElement($parentElement);
+  }
 }
