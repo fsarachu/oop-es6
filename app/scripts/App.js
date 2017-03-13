@@ -7,15 +7,7 @@ export default class App extends AppBase {
   constructor() {
     super('FleetTrackr');
     this._dataService = new FleetDataService();
-
-    this.dataService.loadData(fleet);
-
-    this.addRoute('Home', '/', null, true, 'home');
-    this.addRoute('Cars', '/cars', null, false, 'directions_car');
-    this.addRoute('Drones', '/drones', null, false, 'toys');
-    this.addRoute('Map', '/map', null, false, 'map');
-
-    this.render($('body'));
+    this.run();
   }
 
   get dataService() {
@@ -24,6 +16,17 @@ export default class App extends AppBase {
 
   set dataService(value) {
     this._dataService = value;
+  }
+
+  run() {
+    this.dataService.loadData(fleet);
+
+    this.addRoute('Home', '/', null, true, 'home');
+    this.addRoute('Cars', '/cars', null, false, 'directions_car');
+    this.addRoute('Drones', '/drones', null, false, 'toys');
+    this.addRoute('Map', '/map', null, false, 'map');
+
+    this.render($('body'));
   }
 
 }
