@@ -64,5 +64,18 @@ export default class TitleBar extends BaseElement {
 
   addLink(title, url, icon) {
     this.links.push({title, url, icon});
+
+    // If title bar has already been created, append new link to it
+    if (this.element) {
+      let linkString = '';
+
+      if (icon) {
+        linkString += `<a class="mdl-navigation__link" href="${url}"><span class="material-icons">${icon}</span> ${title}</a>`;
+      } else {
+        linkString += `<a class="mdl-navigation__link" href="${url}">${title}</a>`;
+      }
+
+      this.element.find('.mdl-navigation').append($(linkString));
+    }
   }
 }
