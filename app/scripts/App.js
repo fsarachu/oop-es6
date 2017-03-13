@@ -4,10 +4,13 @@ import fleet from './data/fleetData';
 
 export default class App extends AppBase {
 
-  constructor() {
+  constructor(run = true) {
     super('FleetTrackr');
     this._dataService = new FleetDataService();
-    this.run();
+
+    if (run) {
+      this.run();
+    }
   }
 
   get dataService() {
