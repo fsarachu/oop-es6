@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const gulpLoadPlugins = require('gulp-load-plugins');
 const browserSync = require('browser-sync').create();
 const del = require('del');
+const historyApiFallback = require('connect-history-api-fallback');
 const runSequence = require('run-sequence');
 const webpackStream = require('webpack-stream');
 const webpack2 = require('webpack');
@@ -93,7 +94,8 @@ gulp.task('serve', () => {
       notify: false,
       port: 9000,
       server: {
-        baseDir: ['.tmp', 'app']
+        baseDir: ['.tmp', 'app'],
+        middleware: [historyApiFallback()]
       }
     });
 
@@ -114,7 +116,8 @@ gulp.task('serve:dist', ['default'], () => {
     notify: false,
     port: 9000,
     server: {
-      baseDir: ['dist']
+      baseDir: ['dist'],
+      middleware: [historyApiFallback()]
     }
   });
 });
