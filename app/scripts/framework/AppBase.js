@@ -58,6 +58,6 @@ export default class AppBase {
     let content = this.titleBar.element.find('.page-content');
     content.empty();
 
-    this.routeMap[url].appendToElement(content);
+    this.routeMap[url].render();
   }
 }
