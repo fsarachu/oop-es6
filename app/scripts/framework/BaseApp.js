@@ -1,6 +1,6 @@
 import TitleBar from '../ui/TitleBar';
 
-export default class AppBase {
+export default class BaseApp {
   constructor(title) {
     this._title = title;
     this._titleBar = new TitleBar('FleetTracker');

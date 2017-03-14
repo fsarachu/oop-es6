@@ -1,8 +1,8 @@
-import AppBase from './framework/AppBase';
+import BaseApp from './framework/BaseApp';
 import FleetDataService from './services/FleetDataService';
 import fleet from './data/fleetData';
 
-export default class App extends AppBase {
+export default class App extends BaseApp {
 
   constructor(run = true) {
     super('FleetTrackr');
