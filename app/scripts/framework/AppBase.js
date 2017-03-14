@@ -53,4 +53,11 @@ export default class AppBase {
       this.defaultRoute = url;
     }
   }
+
+  activateRoute(url) {
+    let content = this.titleBar.element.find('.page-content');
+    content.empty();
+
+    this.routeMap[url].appendToElement(content);
+  }
 }
