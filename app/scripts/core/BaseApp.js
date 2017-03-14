@@ -41,11 +41,17 @@ export default class BaseApp {
   }
 
   run() {
+    /* This is the application bootstrap */
     throw new Error('You must override run() in BaseApp');
   }
 
   render($parentElement) {
     this.titleBar.prependToElement($parentElement);
+  }
+
+  registerEvents() {
+    /* This is where event listeners are registered */
+    throw new Error('You must override registerEvents() in BaseApp');
   }
 
   addRoute(title, url, pageObject, defaultRoute = false, icon = null) {
