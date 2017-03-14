@@ -32,6 +32,10 @@ export default class App extends BaseApp {
     this.addRoute('Map', '/map', new MapPage(`${this.title} - Map`), false, 'map');
 
     this.render($('body'));
+
+    if (this.defaultRoute) {
+      this.activateRoute(this.defaultRoute);
+    }
   }
 
 }
