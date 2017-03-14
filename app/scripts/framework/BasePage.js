@@ -5,6 +5,7 @@ export default class BasePage extends BaseElement {
   constructor(title) {
     super();
     this._title = title;
+    $('title').text(value);
   }
 
   get title() {
@@ -13,6 +14,7 @@ export default class BasePage extends BaseElement {
 
   set title(value) {
     this._title = value;
+    $('title').text(value);
   }
 
   getElementString() {
