@@ -1,6 +1,7 @@
 import BaseApp from './framework/BaseApp';
 import FleetDataService from './services/FleetDataService';
 import fleet from './data/fleetData';
+import HomePage from './pages/HomePage';
 
 export default class App extends BaseApp {
 
@@ -24,7 +25,7 @@ export default class App extends BaseApp {
   run() {
     this.dataService.loadData(fleet);
 
-    this.addRoute('Home', '/', null, true, 'home');
+    this.addRoute('Home', '/', new HomePage(`${this.title} - Home`), true, 'home');
     this.addRoute('Cars', '/cars', null, false, 'directions_car');
     this.addRoute('Drones', '/drones', null, false, 'toys');
     this.addRoute('Map', '/map', null, false, 'map');
