@@ -55,9 +55,9 @@ export default class BaseApp {
   }
 
   activateRoute(url) {
-    let content = this.titleBar.element.find('.page-content');
-    content.empty();
+    let $pageContainer = this.titleBar.element.find('main.mdl-layout__content');
+    $pageContainer.empty();
 
-    this.routeMap[url].render();
+    this.routeMap[url].appendToElement($pageContainer);
   }
 }
