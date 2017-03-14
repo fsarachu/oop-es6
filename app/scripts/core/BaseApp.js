@@ -3,7 +3,7 @@ import TitleBar from '../ui/TitleBar';
 export default class BaseApp {
   constructor(title) {
     this._title = title;
-    this._titleBar = new TitleBar('FleetTracker');
+    this._titleBar = new TitleBar(title);
     this._routeMap = [];
     this._defaultRoute = null;
   }
