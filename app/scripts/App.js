@@ -46,5 +46,10 @@ export default class App extends BaseApp {
       window.history.pushState('', $target.text(), $target.attr('href'));
       this.activateRoute($target.attr('href'));
     });
+
+    window.onpopstate = () => {
+      console.log(document.location.pathname);
+      this.activateRoute(document.location.pathname);
+    };
   }
 }
