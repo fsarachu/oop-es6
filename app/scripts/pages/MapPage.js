@@ -13,10 +13,12 @@ export default class MapPage extends BasePage {
   }
 
   createElement() {
+    super.createElement();
+
     this.loadMapsApi();
     window.initMap = () => {
       let googleMap = new GoogleMap();
-      googleMap.appendToElement($('.page-content'));
+      googleMap.appendToElement(this.element);
       googleMap.start();
     };
   }
