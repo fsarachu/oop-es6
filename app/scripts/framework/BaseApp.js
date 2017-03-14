@@ -55,9 +55,13 @@ export default class BaseApp {
   }
 
   activateRoute(url) {
-    let $pageContainer = this.titleBar.element.find('main.mdl-layout__content');
-    $pageContainer.empty();
+    if (url in this.routeMap) {
+      let $pageContainer = this.titleBar.element.find('main.mdl-layout__content');
+      $pageContainer.empty();
 
-    this.routeMap[url].appendToElement($pageContainer);
+      this.routeMap[url].appendToElement($pageContainer);
+    } else {
+      throw new Error(`Route "${url}" is not registered in routeMap`);
+    }
   }
 }
