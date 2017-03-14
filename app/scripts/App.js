@@ -2,6 +2,7 @@ import BaseApp from './framework/BaseApp';
 import FleetDataService from './services/FleetDataService';
 import fleet from './data/fleetData';
 import HomePage from './pages/HomePage';
+import MapPage from './pages/MapPage';
 
 export default class App extends BaseApp {
 
@@ -28,7 +29,7 @@ export default class App extends BaseApp {
     this.addRoute('Home', '/', new HomePage(`${this.title} - Home`), true, 'home');
     this.addRoute('Cars', '/cars', null, false, 'directions_car');
     this.addRoute('Drones', '/drones', null, false, 'toys');
-    this.addRoute('Map', '/map', null, false, 'map');
+    this.addRoute('Map', '/map', new MapPage(`${this.title} - Map`), false, 'map');
 
     this.render($('body'));
   }
