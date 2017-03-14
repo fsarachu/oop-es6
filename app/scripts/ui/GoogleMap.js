@@ -1,4 +1,4 @@
-import BaseElement from './BaseElement';
+import BaseElement from '../framework/BaseElement';
 
 export default class GoogleMap extends BaseElement {
 
