@@ -40,6 +40,10 @@ export default class BaseApp {
     this._defaultRoute = value;
   }
 
+  run() {
+    throw new Error('You must override run() in BaseApp');
+  }
+
   render($parentElement) {
     this.titleBar.prependToElement($parentElement);
   }
