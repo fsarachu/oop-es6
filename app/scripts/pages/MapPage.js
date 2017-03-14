@@ -1,18 +1,18 @@
-import BasePage from './BasePage';
+import BasePage from '../framework/BasePage';
 import GoogleMap from '../ui/GoogleMap';
 
 export default class MapPage extends BasePage {
-  constructor() {
-    super();
+
+  constructor(title) {
+    super(title);
   }
 
   loadMapsApi() {
     let scriptTag = $('<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBezMSiS0N7mNrP_8tGovq_tdgJBdpKqPY&callback=initMap" async defer></script>');
-
     $('body').append(scriptTag);
   }
 
-  render() {
+  createElement() {
     this.loadMapsApi();
     window.initMap = () => {
       let googleMap = new GoogleMap();
