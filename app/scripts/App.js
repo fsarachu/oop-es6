@@ -6,13 +6,9 @@ import MapPage from './pages/MapPage';
 
 export default class App extends BaseApp {
 
-  constructor(run = true) {
+  constructor() {
     super('FleetTrackr');
     this._dataService = new FleetDataService();
-
-    if (run) {
-      this.run();
-    }
   }
 
   get dataService() {
