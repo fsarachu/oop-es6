@@ -5,7 +5,7 @@ export default class BasePage extends BaseElement {
   constructor(title) {
     super();
     this._title = title;
-    $('title').text(value);
+    $('title').text(title);
   }
 
   get title() {
