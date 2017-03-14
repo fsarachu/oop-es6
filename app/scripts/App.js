@@ -28,9 +28,21 @@ export default class App extends BaseApp {
     this.addRoute('Map', '/map', new MapPage(`${this.title} - Map`), false, 'map');
 
     this.render($('body'));
+    this.registerEvents();
 
     if (this.defaultRoute) {
       this.activateRoute(this.defaultRoute);
     }
+  }
+
+  registerEvents() {
+    $('nav a').on('click', e => {
+      e.preventDefault();
+      let $target = $(e.currentTarget);
+
+      console.dir($target);
+
+      window.history.pushState('', $target.text(), $target.attr('href'));
+    });
   }
 }
