@@ -30,8 +30,11 @@ export default class App extends BaseApp {
     this.render($('body'));
     this.registerEvents();
 
-    if (this.defaultRoute) {
-      this.activateRoute(this.defaultRoute);
+    try {
+      this.activateRoute(document.location.pathname);
+    } catch (e) {
+      window.history.pushState('', this.routeMap[document.location.pathname].title, document.location.pathname);
+      this.activateRoute(this.defaultRoute || '/');
     }
   }
 
