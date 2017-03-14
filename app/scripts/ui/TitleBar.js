@@ -1,4 +1,4 @@
-import BaseElement from '../framework/BaseElement';
+import BaseElement from '../core/BaseElement';
 
 export default class TitleBar extends BaseElement {
 

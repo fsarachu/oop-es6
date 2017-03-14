@@ -1,4 +1,4 @@
-import BaseApp from './framework/BaseApp';
+import BaseApp from './core/BaseApp';
 import FleetDataService from './services/FleetDataService';
 import fleet from './data/fleetData';
 import HomePage from './pages/HomePage';
@@ -37,5 +37,4 @@ export default class App extends BaseApp {
       this.activateRoute(this.defaultRoute);
     }
   }
-
 }

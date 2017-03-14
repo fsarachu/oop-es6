@@ -1,4 +1,4 @@
-import BasePage from '../framework/BasePage';
+import BasePage from '../core/BasePage';
 import GoogleMap from '../ui/GoogleMap';
 
 export default class MapPage extends BasePage {

@@ -1,4 +1,4 @@
-import BasePage from '../framework/BasePage';
+import BasePage from '../core/BasePage';
 import Image from '../ui/Image';
 
 export default class HomePage extends BasePage {
