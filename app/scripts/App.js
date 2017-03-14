@@ -43,9 +43,8 @@ export default class App extends BaseApp {
       e.preventDefault();
       let $target = $(e.currentTarget);
 
-      console.dir($target);
-
       window.history.pushState('', $target.text(), $target.attr('href'));
+      this.activateRoute($target.attr('href'));
     });
   }
 }
