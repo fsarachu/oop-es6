@@ -67,7 +67,7 @@ export default class BaseApp {
   activateRoute(url) {
     if (url in this.routeMap) {
       let $pageContainer = this.titleBar.element.find('main.mdl-layout__content');
-      $pageContainer.empty();
+      $pageContainer.children('.page-content').first().detach();
 
       this.routeMap[url].appendToElement($pageContainer);
     } else {
