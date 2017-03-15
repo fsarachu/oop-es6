@@ -13,7 +13,6 @@ html, body, .page-content, .mdl-layout__content {
 
 .hero-section {
   height: 100%;
-  /* IE11 doesn't like min-height */
   width: 100%;
   margin: 0;
   padding: 0;
@@ -22,16 +21,24 @@ html, body, .page-content, .mdl-layout__content {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
   display: flex;
-  flex-direction: column;
-  margin: auto;
+  flex: 0 1 100%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+
+  .mdl-button {
+    margin: .5rem 1rem;
+    min-width: 100px;
+  }
 }
 
 .hero-text {
   color: white;
   margin: auto;
   text-shadow: 1px 1px 4px #000;
+  width: 100%;
 }
 
 .hero-text .mdl-typography--display-2 {
