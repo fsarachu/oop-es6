@@ -7,6 +7,57 @@ html, body, .page-content, .mdl-layout__content {
 }
 
 #map {
-  width:100%;
+  width: 100%;
   height: 100%;
+}
+
+.hero-section {
+  height: 100%;
+  /* IE11 doesn't like min-height */
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(64, 64, 64);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9)), url('../images/drones.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.hero-text {
+  color: white;
+  margin: auto;
+  text-shadow: 1px 1px 4px #000;
+}
+
+.hero-text .mdl-typography--display-2 {
+  font-size: 6rem;
+  margin: 3rem;
+  font-weight: bold;
+}
+
+.hero-text .mdl-typography--display-1 {
+  font-size: 2.2rem;
+  font-weight: 300;
+}
+
+@media screen and (max-width: 580px) {
+  .hero-text p {
+    white-space: pre-line;
+  }
+
+  .hero-text .mdl-typography--display-2 {
+    margin: .2rem;
+    font-size: 3.5rem;
+    font-weight: bold;
+  }
+
+  .hero-text .mdl-typography--display-1 {
+    font-size: 1.3rem;
+    font-weight: 300;
+  }
 }
