@@ -45,6 +45,12 @@ export default class App extends BaseApp {
 
       window.history.pushState('', $target.text(), $target.attr('href'));
       this.activateRoute($target.attr('href'));
+
+      let $menuDrawer = this.titleBar.element.find('.mdl-layout__drawer');
+      if ($menuDrawer.hasClass('is-visible')) {
+        let layout = document.querySelector('.mdl-layout');
+        layout.MaterialLayout.toggleDrawer();
+      }
     });
 
     window.onpopstate = () => {
