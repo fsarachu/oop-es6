@@ -28,9 +28,11 @@ html, body, .page-content, .mdl-layout__content {
   justify-content: center;
   align-content: center;
 
-  .mdl-button {
+  .mdl-button.mdl-button--flat {
     margin: .5rem 1rem;
     min-width: 100px;
+    color: #FFFFFF;
+    border: 1px solid #FFFFFF;
   }
 }
 
