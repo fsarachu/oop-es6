@@ -1,5 +1,6 @@
 import BasePage from '../core/BasePage';
-import Image from '../ui/Image';
+import Hero from '../ui/Hero';
+import Button from '../ui/Button';
 
 export default class HomePage extends BasePage {
 
@@ -10,7 +11,13 @@ export default class HomePage extends BasePage {
   createElement() {
     super.createElement();
 
-    let image = new Image('images/drones.jpg');
-    image.appendToElement(this.element);
+    let hero = new Hero('Fleet Tracker', 'Total control over your fleet');
+    hero.appendToElement(this.element);
+
+    let carsButton = new Button('Cars');
+    carsButton.appendToElement(hero.element);
+
+    let dronesButton = new Button('Drones');
+    dronesButton.appendToElement(hero.element);
   }
 }
