@@ -25,7 +25,7 @@ export default class App extends BaseApp {
     this.dataService.loadData(fleet);
 
     this.addRoute('Home', '/', new HomePage(`${this.title} - Home`), true, 'home');
-    this.addRoute('Cars', '/cars', new CarsPage(`${this.title} - Home`, this.dataService.cars), false, 'directions_car');
+    this.addRoute('Cars', '/cars', new CarsPage(`${this.title} - Cars`, this.dataService.cars), false, 'directions_car');
     this.addRoute('Drones', '/drones', new DronesPage(`${this.title} - Drones`, this.dataService.drones), false, 'toys');
     this.addRoute('Map', '/map', new MapPage(`${this.title} - Map`), false, 'map');
 
