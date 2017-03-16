@@ -4,6 +4,7 @@ import fleet from './data/fleetData';
 import HomePage from './pages/HomePage';
 import MapPage from './pages/MapPage';
 import CarsPage from "./pages/CarsPage";
+import DronesPage from "./pages/DronesPage";
 
 export default class App extends BaseApp {
 
@@ -25,7 +26,7 @@ export default class App extends BaseApp {
 
     this.addRoute('Home', '/', new HomePage(`${this.title} - Home`), true, 'home');
     this.addRoute('Cars', '/cars', new CarsPage(`${this.title} - Home`, this.dataService.cars), false, 'directions_car');
-    this.addRoute('Drones', '/drones', null, false, 'toys');
+    this.addRoute('Drones', '/drones', new DronesPage(`${this.title} - Drones`, this.dataService.drones), false, 'toys');
     this.addRoute('Map', '/map', new MapPage(`${this.title} - Map`), false, 'map');
 
     this.render($('body'));
